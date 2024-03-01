@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @supports (display: grid) {
+        body {
+          margin: 0;
+          padding: 0;
+        }
+
+        .grid-container {
+          display: grid;
+          gap: 1rem;
+          grid-template-rows: repeat(4, 1fr);
+          grid-template-columns: repeat(2, 1fr);
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+          background: url(./imagenes/1.png) center/cover no-repeat;
+          height: 100%;
+        }
+
+        .titulo {
+          grid-row: 1;
+          grid-column: 1 / span 2;
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .titulo img,
+        .img1 img,
+        .img2 img,
+        .img3 img,
+        .img4 img,
+        .img5 img,
+        .img6 img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      @supports not (display: grid) {
+        body {
+          margin: 0;
+          padding: 0;
+        }
+
+        .grid-container {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          background: url(./imagenes/1.png) center/cover no-repeat;
+          height: 100%;
+        }
+
+        .titulo,
+        .img1,
+        .img2,
+        .img3,
+        .img4,
+        .img5,
+        .img6 {
+          width: 100%;
+          padding: 1rem;
+          box-sizing: border-box;
+        }
+
+        .titulo img,
+        .img1 img,
+        .img2 img,
+        .img3 img,
+        .img4 img,
+        .img5 img,
+        .img6 img {
+          max-width: 100%;
+          height: auto;
+        }
+
+        .img1,
+        .img2,
+        .img3,
+        .img4,
+        .img5,
+        .img6 {
+          width: calc(50% - 2rem);
+          margin: 1rem;
+        }
+
+        @media (max-width: 767px) {
+          .img1,
+          .img2,
+          .img3,
+          .img4,
+          .img5,
+          .img6 {
+            width: 100%;
+          }
+        }
+      }
+    </style>
+    <title>Póster</title>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="titulo">
+        <img src="./imagenes/2.png" alt="titulo" />
+      </div>
+      <div class="img1">
+        <img src="./imagenes/3.png" alt="paso 1" />
+      </div>
+      <div class="img2">
+        <img src="./imagenes/4.png" alt="paso 2" />
+      </div>
+      <div class="img3">
+        <img src="./imagenes/5.png" alt="paso 3" />
+      </div>
+      <div class="img4">
+        <img src="./imagenes/6.png" alt="paso 4" />
+      </div>
+      <div class="img5">
+        <img src="./imagenes/7.png" alt="paso 5" />
+      </div>
+      <div class="img6">
+        <img src="./imagenes/8.png" alt="paso 6" />
+      </div>
+    </div>
+  </body>
+</html>
